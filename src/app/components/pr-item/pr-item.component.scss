@@ -1,0 +1,12 @@
+.action-button {
+  transition: all 0.2s ease-in-out;
+  
+  &:disabled {
+    opacity: 0.6;
+  }
+}
+
+.spinner-small {
+  width: 1rem;
+  height: 1rem;
+}
