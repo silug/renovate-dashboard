@@ -22,4 +22,15 @@ describe('App', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('Renovate PR Dashboard');
   });
+
+  it('should render GitHub link to source repository', () => {
+    const fixture = TestBed.createComponent(App);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    const githubLink = compiled.querySelector('a[href="https://github.com/silug/renovate-dashboard"]');
+    expect(githubLink).toBeTruthy();
+    expect(githubLink?.getAttribute('target')).toBe('_blank');
+    expect(githubLink?.getAttribute('rel')).toBe('noopener noreferrer');
+    expect(githubLink?.getAttribute('aria-label')).toBe('View source on GitHub');
+  });
 });
