@@ -225,7 +225,9 @@
               @for (group of filteredGroups(); track group.title) {
                 <app-pr-group
                   [group]="group"
+                  [refreshing]="refreshingGroupTitles().has(group.title)"
                   (toggleGroup)="toggleGroup($event)"
+                  (refreshGroup)="refreshGroupStatuses($event)"
                   (closePr)="closePullRequest($event)"
                   (approveAndMergePr)="approveAndMergePullRequest($event)"
                   (closeGroupPrs)="closeGroupPullRequests($event)"
